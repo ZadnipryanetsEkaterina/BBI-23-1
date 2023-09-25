@@ -4,7 +4,7 @@ namespace _3rd_Lab
 {
     class Theory
     {
-        static void Main(string[] args)
+        void Main(string[] args)
         {
             #region Collections Theory
             /* Array - static (restricted) massive of data in the memory. If we want to extend it, we should create a new array and copy existing data there.

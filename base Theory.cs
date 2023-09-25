@@ -4,7 +4,7 @@ namespace _1st_Lesson
 {
     class Program
     {
-        static void Main(string[] args)
+        void Main(string[] args)
         {
             #region Integers
             int a, b = 5;

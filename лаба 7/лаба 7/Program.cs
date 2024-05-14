@@ -255,110 +255,116 @@
 //Вывести 1 команду победителя (она может быть как мужская, так и женская). 
 //Использовать динамическую связку: преобразование классов.*/
 
-//using System;
+using System;
 
-//public struct Participant
-//{
-//    private int place;
+public struct Participant
+{
+    private int place;
 
-//    public Participant(int place)
-//    {
-//        this.place = place;
-//    }
+    public Participant(int place)
+    {
+        this.place = place;
+    }
 
-//    public int GetPlace()
-//    {
-//        return place;
-//    }
+    public int GetPlace()
+    {
+        return place;
+    }
 
-//}
+}
 
-//public class Team
-//{
-//    private Participant[] participants;
+public class Team
+{
+    private Participant[] participants;
 
-//    public Team(int[] places)
-//    {
-//        participants = new Participant[6];
-//        for (int i = 0; i < 6; i++)
-//        {
-//            participants[i] = new Participant(places[i]);
-//        }
-//    }
+    public Team(int[] places)
+    {
+        participants = new Participant[6];
+        for (int i = 0; i < 6; i++)
+        {
+            participants[i] = new Participant(places[i]);
+        }
+    }
 
-//    public virtual int CalculateScore()
-//    {
-//        int score = 0;
-//        for (int i = 0; i < participants.Length; i++)
-//        {
-//            int place = participants[i].GetPlace();
-//            if (place == 1)
-//            {
-//                score += 5;
-//            }
-//            else if (place == 2)
-//            {
-//                score += 4;
-//            }
-//            else if (place == 3)
-//            {
-//                score += 3;
-//            }
-//            else if (place == 4)
-//            {
-//                score += 2;
-//            }
-//            else if (place == 5)
-//            {
-//                score += 1;
-//            }
-//        }
-//        return score;
-//    }
-//}
+    public virtual int CalculateScore()
+    {
+        int score = 0;
+        for (int i = 0; i < participants.Length; i++)
+        {
+            int place = participants[i].GetPlace();
+            if (place == 1)
+            {
+                score += 5;
+            }
+            else if (place == 2)
+            {
+                score += 4;
+            }
+            else if (place == 3)
+            {
+                score += 3;
+            }
+            else if (place == 4)
+            {
+                score += 2;
+            }
+            else if (place == 5)
+            {
+                score += 1;
+            }
+        }
+        return score;
+    }
+}
 
-//public class MenTeam : Team
-//{
-//    public MenTeam(int[] places) : base(places)
-//    {
-//    }
-//    public override int CalculateScore()
-//    {
-//        return base.CalculateScore();
-//    }
-//}
+public class MenTeam : Team
+{
+    public MenTeam(int[] places) : base(places)
+    {
+    }
+    public override int CalculateScore()
+    {
+        return base.CalculateScore();
+    }
+    public string GetTeamType()
+    {
+        return "мужская";
+    }
+}
 
-//public class WomenTeam : Team
-//{
-//    public WomenTeam(int[] places) : base(places)
-//    {
-//    }
-//    public override int CalculateScore()
-//    {
-//        return base.CalculateScore();
-//    }
-//}
+public class WomenTeam : Team
+{
+    public WomenTeam(int[] places) : base(places)
+    {
+    }
+    public override int CalculateScore()
+    {
+        return base.CalculateScore();
+    }
+    public string GetTeamType()
+    {
+        return "женская";
+    }
+}
 
-//class Program
-//{
-//    static void Main(string[] args)
-//    {
-//        int[] team1Places = { 1, 4, 7, 10, 13, 16 };
-//        int[] team2Places = { 2, 5, 8, 11, 14, 17 };
-//        int[] team3Places = { 3, 6, 9, 12, 15, 18 };
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] menTeamPlaces = { 1, 4, 7, 10, 13, 16 };
+        int[] womenTeamPlaces = { 1, 3, 8, 11, 14, 17 };
 
-//        Team team1 = new MenTeam(team1Places);
-//        Team team2 = new MenTeam(team2Places);
-//        Team team3 = new MenTeam(team3Places);
+        Team menTeam = new MenTeam(menTeamPlaces);
+        Team womenTeam = new WomenTeam(womenTeamPlaces);
 
-//        int scoreTeam1 = team1.CalculateScore();
-//        int scoreTeam2 = team2.CalculateScore();
-//        int scoreTeam3 = team3.CalculateScore();
+        int scoreMenTeam = menTeam.CalculateScore();
+        int scoreWomenTeam = womenTeam.CalculateScore();
 
-//        int winnerTeam = scoreTeam1 >= scoreTeam2 && scoreTeam1 >= scoreTeam3 ? 1 : (scoreTeam2 >= scoreTeam3 ? 2 : 3);
+        string winnerType = scoreMenTeam >= scoreWomenTeam ? "мужская" : "женская";
+        int winnerScore = Math.Max(scoreMenTeam, scoreWomenTeam);
 
-//        Console.WriteLine($"Победила команда {winnerTeam}");
-//    }
-//}
+        Console.WriteLine($"Победила {winnerType} команда со счетом {winnerScore}");
+    }
+}
 
 #endregion

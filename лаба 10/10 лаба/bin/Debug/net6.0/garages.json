@@ -1,0 +1,197 @@
+[
+  {
+    "Name": "Garage 1",
+    "Area": 500,
+    "Vehicles": [
+      {
+        "MotorcycleType": "Cruiser",
+        "EngineSize": "1200cc",
+        "MaxSpeed": 220,
+        "Type": "Motorcycle",
+        "Name": "Harley-Davidson",
+        "Speed": 200,
+        "Width": 1.5,
+        "Length": 2.0,
+        "Area": 3.0
+      },
+      {
+        "Doors": 4,
+        "Color": "Red",
+        "MaxSpeed": 200,
+        "Type": "Car",
+        "Name": "Toyota",
+        "Speed": 150,
+        "Width": 2.5,
+        "Length": 4.0,
+        "Area": 10.0
+      },
+      {
+        "Capacity": 5000,
+        "Wheels": 8,
+        "MaxSpeed": 120,
+        "Type": "Truck",
+        "Name": "Volvo",
+        "Speed": 100,
+        "Width": 3.0,
+        "Length": 6.0,
+        "Area": 18.0
+      }
+    ]
+  },
+  {
+    "Name": "Garage 2",
+    "Area": 500,
+    "Vehicles": [
+      {
+        "MotorcycleType": "Sport",
+        "EngineSize": "1000cc",
+        "MaxSpeed": 200,
+        "Type": "Motorcycle",
+        "Name": "Yamaha",
+        "Speed": 180,
+        "Width": 1.3,
+        "Length": 2.2,
+        "Area": 2.8600000000000003
+      },
+      {
+        "Doors": 2,
+        "Color": "Blue",
+        "MaxSpeed": 180,
+        "Type": "Car",
+        "Name": "Ford",
+        "Speed": 140,
+        "Width": 2.7,
+        "Length": 4.5,
+        "Area": 12.15
+      },
+      {
+        "Capacity": 6000,
+        "Wheels": 6,
+        "MaxSpeed": 130,
+        "Type": "Truck",
+        "Name": "Mercedes-Benz",
+        "Speed": 110,
+        "Width": 3.2,
+        "Length": 6.5,
+        "Area": 20.8
+      }
+    ]
+  },
+  {
+    "Name": "Garage 3",
+    "Area": 500,
+    "Vehicles": [
+      {
+        "MotorcycleType": "Cafe Racer",
+        "EngineSize": "900cc",
+        "MaxSpeed": 210,
+        "Type": "Motorcycle",
+        "Name": "Ducati",
+        "Speed": 190,
+        "Width": 1.4,
+        "Length": 2.1,
+        "Area": 2.94
+      },
+      {
+        "Doors": 4,
+        "Color": "Black",
+        "MaxSpeed": 170,
+        "Type": "Car",
+        "Name": "Chevrolet",
+        "Speed": 130,
+        "Width": 2.6,
+        "Length": 4.2,
+        "Area": 10.920000000000002
+      },
+      {
+        "Capacity": 7000,
+        "Wheels": 10,
+        "MaxSpeed": 140,
+        "Type": "Truck",
+        "Name": "Ford",
+        "Speed": 120,
+        "Width": 3.5,
+        "Length": 7.0,
+        "Area": 24.5
+      }
+    ]
+  },
+  {
+    "Name": "Garage 4",
+    "Area": 500,
+    "Vehicles": [
+      {
+        "Doors": 4,
+        "Color": "Silver",
+        "MaxSpeed": 190,
+        "Type": "Car",
+        "Name": "Honda",
+        "Speed": 160,
+        "Width": 2.4,
+        "Length": 4.3,
+        "Area": 10.319999999999999
+      },
+      {
+        "Capacity": 8000,
+        "Wheels": 12,
+        "MaxSpeed": 115,
+        "Type": "Truck",
+        "Name": "Scania",
+        "Speed": 105,
+        "Width": 3.7,
+        "Length": 7.5,
+        "Area": 27.75
+      },
+      {
+        "Capacity": 8000,
+        "Wheels": 12,
+        "MaxSpeed": 115,
+        "Type": "Truck",
+        "Name": "Scania",
+        "Speed": 105,
+        "Width": 3.7,
+        "Length": 7.5,
+        "Area": 27.75
+      }
+    ]
+  },
+  {
+    "Name": "Garage 5",
+    "Area": 500,
+    "Vehicles": [
+      {
+        "MotorcycleType": "Cruiser",
+        "EngineSize": "1500cc",
+        "MaxSpeed": 190,
+        "Type": "Motorcycle",
+        "Name": "Kawasaki",
+        "Speed": 170,
+        "Width": 1.6,
+        "Length": 2.3,
+        "Area": 3.6799999999999997
+      },
+      {
+        "Doors": 4,
+        "Color": "White",
+        "MaxSpeed": 200,
+        "Type": "Car",
+        "Name": "BMW",
+        "Speed": 155,
+        "Width": 2.8,
+        "Length": 4.7,
+        "Area": 13.16
+      },
+      {
+        "Capacity": 9000,
+        "Wheels": 14,
+        "MaxSpeed": 125,
+        "Type": "Truck",
+        "Name": "MAN",
+        "Speed": 115,
+        "Width": 3.8,
+        "Length": 7.7,
+        "Area": 29.259999999999998
+      }
+    ]
+  }
+]

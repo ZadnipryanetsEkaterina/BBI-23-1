@@ -256,36 +256,31 @@
 //Использовать динамическую связку: преобразование классов.*/
 
 using System;
-
 public struct Participant
 {
     private int place;
-
     public Participant(int place)
     {
         this.place = place;
     }
-
     public int GetPlace()
     {
         return place;
     }
-
 }
-
 public class Team
 {
     private Participant[] participants;
-
-    public Team(int[] places)
+    public string name;
+    public Team(int[] places, string name)
     {
         participants = new Participant[6];
         for (int i = 0; i < 6; i++)
         {
             participants[i] = new Participant(places[i]);
         }
+        this.name = name;
     }
-
     public virtual int CalculateScore()
     {
         int score = 0;
@@ -315,56 +310,59 @@ public class Team
         }
         return score;
     }
+    public virtual string GetTeamType()
+    {
+        return "команда";
+    }
+    public string GetName()
+    {
+        return name;
+    }
 }
 
 public class MenTeam : Team
 {
-    public MenTeam(int[] places) : base(places)
-    {
-    }
-    public override int CalculateScore()
-    {
-        return base.CalculateScore();
-    }
-    public string GetTeamType()
+    public MenTeam(int[] places, string name) : base(places, name) { }
+    public override string GetTeamType()
     {
         return "мужская";
     }
 }
-
 public class WomenTeam : Team
 {
-    public WomenTeam(int[] places) : base(places)
-    {
-    }
-    public override int CalculateScore()
-    {
-        return base.CalculateScore();
-    }
-    public string GetTeamType()
+    public WomenTeam(int[] places, string name) : base(places, name) { }
+    public override string GetTeamType()
     {
         return "женская";
     }
 }
-
 class Program
 {
     static void Main(string[] args)
     {
-        int[] menTeamPlaces = { 1, 4, 7, 10, 13, 16 };
-        int[] womenTeamPlaces = { 1, 3, 8, 11, 14, 17 };
+        MenTeam menTeam1 = new MenTeam(new int[] { 1, 2, 3, 4, 5, 6 }, "Men team 1");
+        MenTeam menTeam2 = new MenTeam(new int[] { 7, 8, 9, 10, 11, 12 }, "Men team 2");
+        MenTeam menTeam3 = new MenTeam(new int[] { 13, 14, 15, 16, 17, 18 }, "Men team 3");
 
-        Team menTeam = new MenTeam(menTeamPlaces);
-        Team womenTeam = new WomenTeam(womenTeamPlaces);
+        WomenTeam womenTeam1 = new WomenTeam(new int[] { 19, 20, 21, 22, 23, 24 }, "Women team 1");
+        WomenTeam womenTeam2 = new WomenTeam(new int[] { 25, 26, 27, 28, 29, 30 }, "Women team 2");
+        WomenTeam womenTeam3 = new WomenTeam(new int[] { 31, 32, 33, 34, 35, 36 }, "Women team 3");
 
-        int scoreMenTeam = menTeam.CalculateScore();
-        int scoreWomenTeam = womenTeam.CalculateScore();
+        Team[] teams = new Team[] { menTeam1, menTeam2, menTeam3, womenTeam1, womenTeam2, womenTeam3 };
+        
+        Team bestTeam = teams[0];
+        int bestScore = teams[0].CalculateScore();
+        for (int i = 1; i < teams.Length; i++)
+        {
+            int score = teams[i].CalculateScore();
+            if (score > bestScore)
+            {
+                bestTeam = teams[i];
+                bestScore = score;
+            }
+        }
 
-        string winnerType = scoreMenTeam >= scoreWomenTeam ? "мужская" : "женская";
-        int winnerScore = Math.Max(scoreMenTeam, scoreWomenTeam);
-
-        Console.WriteLine($"Победила {winnerType} команда со счетом {winnerScore}");
+        Console.WriteLine($"Победила {bestTeam.GetTeamType()} команда {bestTeam.GetName()} со счетом {bestScore}");
     }
 }
-
 #endregion
